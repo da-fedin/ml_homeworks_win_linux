@@ -40,6 +40,9 @@ try {
     Write-Output "Installing Jupyter using pip..."
     & $pipExecutable install jupyter
     Write-Output "Jupyter installed successfully!"
+
+    # Install spacy model for 17th homework
+    & python -m spacy download en_core_web_sm
 }
 catch {
     Write-Output "Failed to install requirements. Please check if pip is installed correctly."
