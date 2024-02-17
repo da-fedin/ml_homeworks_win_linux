@@ -7,7 +7,7 @@ repos:
         stages: [ commit ]
         language: system
         entry: python -m nbconvert --ClearOutputPreprocessor.enabled=True --inplace
-      - id: black-jupyter
+      - id: black-jupyter # for notebook
         name: black-jupyter
         entry: blackcellmagic.blackcellmagic
         language: python
