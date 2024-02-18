@@ -1,4 +1,5 @@
 .idea
 /.venv/
 /notebooks/logs/
+/notebooks/archive.ics.uci.edu/ml/machine-learning-databases/iris/
 /notebooks/mnist-samples.png

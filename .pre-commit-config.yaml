@@ -7,11 +7,11 @@ repos:
         stages: [ commit ]
         language: system
         entry: python -m nbconvert --ClearOutputPreprocessor.enabled=True --inplace
-      - id: black-jupyter # for notebook
-        name: black-jupyter
-        entry: blackcellmagic.blackcellmagic
-        language: python
-        files: \.ipynb$
+#      - id: black-jupyter # for notebook
+#        name: black-jupyter
+#        entry: blackcellmagic.blackcellmagic
+#        language: python
+#        files: \.ipynb$
       - id: flake8-nb
         name: flake8-nb
         entry: flake8_nb --ignore=E501,E703 notebooks/
