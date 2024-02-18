@@ -30,7 +30,7 @@ repos:
   - repo: https://github.com/psf/black
     rev: 23.3.0
     hooks:
-      - id: black  # Does one still need black here?
+#      - id: black  # Does one still need black here?
       - id: black-jupyter
         entry: black
         minimum_pre_commit_version: 2.9.2
