@@ -9,6 +9,7 @@ prophet==1.1.5
 tensorflow==2.15.0
 spacy==3.7.2
 scipy==1.11.4
+category-encoders==2.6.3
 
 # For image processing
 scikit-image==0.22.0
@@ -26,5 +27,3 @@ pre-commit==3.6.0
 nbconvert==7.14.2
 # Formatter. Apply codestyle
 black==23.7.0
-# to notebook as well
-# blackcellmagic==0.0.1
