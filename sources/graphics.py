@@ -4,7 +4,12 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 
-def get_heatmap(dataframe: pd.DataFrame, name: str) -> None:
+def get_heatmap(
+    dataframe: pd.DataFrame,
+    name: str,
+    cmap: str = "viridis",
+    fmt: str = ".2f",
+) -> None:
     # Get correlation matrix
     correlation_statistics = dataframe.corr()
 
@@ -15,9 +20,9 @@ def get_heatmap(dataframe: pd.DataFrame, name: str) -> None:
     plt.figure(figsize=(15, 15))
 
     # Get heatmap
-    sns.heatmap(correlation_statistics, mask=stst_mask, annot=True)
+    sns.heatmap(correlation_statistics, mask=stst_mask, annot=True, cmap=cmap, fmt=fmt)
 
-    plt.title(f"Heatmap of Correlation Matrix for {name}")
+    plt.title(f"Heatmap of Correlation Matrix for {name}.")
 
 
 def get_count_plot(dataframe: pd.DataFrame, name: str):
