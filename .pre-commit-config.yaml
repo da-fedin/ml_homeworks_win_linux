@@ -9,7 +9,7 @@ repos:
         entry: python -m nbconvert --ClearOutputPreprocessor.enabled=True --inplace
       - id: flake8-nb
         name: flake8-nb
-        entry: flake8_nb --ignore=E501,E703 notebooks/
+        entry: flake8_nb --ignore=E501,E703 --notebook-cell-format '{nb_path}:code_cell#{code_cell_count}' notebooks/
         language: system
         types: [ python ]
       - id: flake8

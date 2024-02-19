@@ -20,3 +20,7 @@ build-project-linux:
 # Install pre-commit hook
 pre-commit-install:
 	.venv\Scripts\pre-commit.exe install
+
+# Run pre-commit hook
+pre-commit-run:
+	.venv\Scripts\pre-commit.exe run
