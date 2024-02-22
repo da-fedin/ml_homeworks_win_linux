@@ -10,6 +10,12 @@ tensorflow==2.15.0
 spacy==3.7.2
 scipy==1.11.4
 category-encoders==2.6.3
+# Hugging Face models
+transformers==4.38.0
+# provides Python wrapper that supports both SentencePiece training and segmentation
+sentencepiece==0.2.0
+# Provides BLEU scores.
+sacrebleu==2.4.0
 
 # For image processing
 scikit-image==0.22.0
