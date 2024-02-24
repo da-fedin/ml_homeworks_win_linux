@@ -32,22 +32,31 @@ def get_category_encoded(
     encoded_df = None
 
     if encoder_type == "OneHotEncoder":
-        encoder = preprocessing.OneHotEncoder(
-            sparse_output=False
-        )  # Set sparse=False to get a dense array
+        encoder = preprocessing.OneHotEncoder(sparse_output=False)
+
+        encoded_df = dataset[category_names].apply(encoder.fit_transform)
+        dataset.drop(columns=category_names, inplace=True)
+        result_df = pd.concat([dataset, encoded_df], axis=1)
 
     elif encoder_type == "LabelEncoder":
         encoder = preprocessing.LabelEncoder()
 
+        encoded_df = dataset[category_names].apply(encoder.fit_transform)
+        dataset.drop(columns=category_names, inplace=True)
+        result_df = pd.concat([dataset, encoded_df], axis=1)
+
+    elif encoder_type == "OrdinalEncoder":
+        encoder = preprocessing.LabelEncoder()
+
+        encoded_dataset = encoder.fit_transform(
+            dataset[category_names].values.reshape(-1, 1)
+        )
+        encoded_dataset = pd.DataFrame(encoded_dataset, columns=["sex"])
+        dataset.drop(columns=category_names, inplace=True)
+        result_df = pd.concat([dataset, encoded_dataset], axis=1)
+
     else:
         print(f"No realisation for {encoder_type} has done yet")
-
-    encoded_df = dataset[category_names].apply(encoder.fit_transform)
-
-    dataset.drop(columns=category_names, inplace=True)
-
-    # Concatenate the original DataFrame with the new DataFrame
-    result_df = pd.concat([dataset, encoded_df], axis=1)
 
     return result_df
 
