@@ -45,16 +45,6 @@ def get_category_encoded(
         dataset.drop(columns=category_names, inplace=True)
         result_df = pd.concat([dataset, encoded_df], axis=1)
 
-    elif encoder_type == "OrdinalEncoder":
-        encoder = preprocessing.LabelEncoder()
-
-        encoded_dataset = encoder.fit_transform(
-            dataset[category_names].values.reshape(-1, 1)
-        )
-        encoded_dataset = pd.DataFrame(encoded_dataset, columns=["sex"])
-        dataset.drop(columns=category_names, inplace=True)
-        result_df = pd.concat([dataset, encoded_dataset], axis=1)
-
     else:
         print(f"No realisation for {encoder_type} has done yet")
 
