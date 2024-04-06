@@ -13,14 +13,14 @@ build-project-win:
 # Build project
 build-project-linux:
 	@echo '----- Build run -----'
-	@chmod +x ./scripts/build.sh
-	@./scripts/build.sh
+	@chmod +x scripts/build.sh
+	@scripts/build.sh
 	@echo '----- Build done -----'
 
 # Install pre-commit hook
 pre-commit-install:
-	.venv\Scripts\pre-commit.exe install
+	.venv/Scripts/pre-commit.exe install
 
 # Run pre-commit hook
 pre-commit-run:
-	.venv\Scripts\pre-commit.exe run
+	.venv/Scripts/pre-commit.exe run

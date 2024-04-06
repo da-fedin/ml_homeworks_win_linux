@@ -3,7 +3,7 @@
 echo "Build started"
 
 # Activate the virtual environment
-source venv/bin/activate
+source .venv/bin/activate
 
 # Upgrade pip
 pip install --upgrade pip
